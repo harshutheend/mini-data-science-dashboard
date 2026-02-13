@@ -6,7 +6,7 @@ class DataAnalyzer:
         self.headers = headers[1:]  # Skip Name column
 
     def summary(self):
-        print("\n📊 SUMMARY STATISTICS\n")
+        print("\n SUMMARY STATISTICS\n")
 
         for i, subject in enumerate(self.headers):
             column = self.data[:, i]
