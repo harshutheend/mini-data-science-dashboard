@@ -5,17 +5,10 @@ class DataLoader:
         self.filepath = filepath
         self.data = None
         self.headers = None
+        self.names = None
 
     def load_data(self):
-        # Load headers
-        self.headers = np.genfromtxt(
-            self.filepath,
-            delimiter=",",
-            dtype=str,
-            max_rows=1
-        )
 
-        # Load remaining data
         raw_data = np.genfromtxt(
             self.filepath,
             delimiter=",",
@@ -23,8 +16,16 @@ class DataLoader:
             skip_header=1
         )
 
-        # Convert numeric columns to float (skip Name column)
+        self.headers = np.genfromtxt(
+            self.filepath,
+            delimiter=",",
+            dtype=str,
+            max_rows=1
+        )
+
+        # Separate names and numeric data
+        self.names = raw_data[:, 0]
         self.data = raw_data[:, 1:].astype(float)
 
-        print("✅ Dataset Loaded Successfully!")
+        print(" Dataset Loaded Successfully!")
         return self.data
