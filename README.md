@@ -12,6 +12,9 @@ This project is a simple Data Science Dashboard built using Python.
 - Bar Chart Visualization
 - Histogram Visualization
 - Interactive Menu Dashboard
+- Add new records dynamically
+- Save updated dataset to CSV
+- Input validation for record
 
 ## Tech Stack
 
